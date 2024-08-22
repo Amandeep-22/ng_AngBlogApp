@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-effect bg-secondary-theme">
+                <div class="card-body text-center">
+                    <h3 class="text-theme-center">All Blog Posts</h3>
+                    <p>From here manage your blog posts.</p>
+
+                    <button class="btn btn-info bg-theme" routerLink="/posts/new"> Add New Post </button>
+                    <button class="btn btn-warning ml-2" routerLink="/"> Back to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-effect">
+                <div class="card-body">
+                    <table class="table row-border hover">
+                        <thead>
+                            <tr>
+                                <th class="width5">No</th>
+                                <th class="width20">Post Image</th>
+                                <th class="width20">Title</th>
+                                <!-- <th class="width30">Exerpt</th> -->
+                                <th>Category</th>
+                                <th class="width10">Date</th>
+                                <th >Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let post of postArray; let i = index">
+                                <td class="width5">{{i+1}}</td>
+                                <td class="width20"><img src="{{post.data.postImgPath}}" class="img img-fluid"></td>
+                                <td class="width20">{{post.data.title}}</td>
+                                <!-- <td class="width30">{{post.data.exerpt}}</td> -->
+                                <td>{{post.data.category.category}}</td>
+                                <td class="width10">{{post.data.createdAt.toMillis() | date}}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning" routerLink="/posts/new" [queryParams]="{id: post.id}">Edit</button>
+                                    <button class="btn btn-sm btn-danger ml-2" (click)="onDelete(post.data.postImgPath, post.id)">Delete</button>
+                                    <button *ngIf="!post.data.isFeatured" class="btn btn-sm btn-success ml-2" (click)="onFeatured(post.id, true)">Mark Featured</button>
+                                    <button *ngIf="post.data.isFeatured" class="btn btn-sm btn-info ml-2" (click)="onFeatured(post.id, false)">Remove Featured</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

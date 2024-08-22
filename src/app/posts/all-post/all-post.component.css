@@ -1,0 +1,26 @@
+
+.width5{
+    width: 5%;
+    height: unset;
+    word-wrap: break-word ;
+    word-break: break-all;
+}
+
+
+
+.width12{
+    width: 12%;
+    height: unset;
+   }
+.width20{
+    width: 20%;
+    height: unset;
+    word-wrap: break-word ;
+    word-break: break-all;
+}
+.width30{
+    width: 29%;
+    height: unset;
+    word-wrap: break-word ;
+    word-break: break-all;
+}
