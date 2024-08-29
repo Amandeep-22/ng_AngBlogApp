@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { LoginComponent } from './auth/login/login.component';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { SubscribersComponent } from './subscribers/subscribers.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
     CategoriesComponent,
     AllPostComponent,
     NewPostComponent,
-    LoginComponent
+    LoginComponent,
+    SubscribersComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
     //ToastNoAnimationModule.forRoot()
   ],
   providers: [],
